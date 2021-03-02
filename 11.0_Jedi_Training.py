@@ -1,33 +1,33 @@
-'''
-Sign your name:________________
- 
+"""
+Sign your name:___Bawi Thawng___
+
  1. Write code that defines a class named Animal:
      * Add a constructor for the Animal class that prints 'An animal has been born.'
      * Add an attribute for the animal name.
      * Add an eat() method for Animal that prints 'Munch munch.'
      * Add a make_noise() method for Animal that prints 'Grrr says [animal name].'
 
-     
+
  2. Write code that defines a class named Cat:
      * Make Animal the parent.
      * Add a constructor for Cat that prints 'A cat has been born.'
      * Modify the constructor so it calls the parent constructor as well.
      * Add a make_noise() method for Cat that prints 'Meow says [animal name].'
 
-     
+
  3. Write code that defines a class named Dog:
-     
+
      * Make Animal the parent.
      * Add a constructor for Dog that prints 'A dog has been born.'
      * Modify the constructor so it calls the parent constructor as well.
      * Add a make_noise() method for Dog that prints 'Bark says [animal name].'
 
-     
+
  4. Write a main program with:
-     
+
      * Code that creates a cat, two dogs, and an animal with names.
      * Code that calls eat() and make_noise() for each animal.
-     
+
  OUTPUT:
 An animal has been born.
 A cat has been born.
@@ -44,5 +44,53 @@ Bark says (another dog name) .
 An animal has been born.
 Munch munch
 Grrr says (animal name) .
-'''
+"""
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        print("An animal has been born")
+
+    def eat(self):
+        print("munch munch")
+
+    def make_noise(self):
+        print("Grrrr, says", self.name)
+
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        print("A cat has been born")
+    def make_noise(self):
+        print("Meow, says", self.name)
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        print("A dog has been born")
+
+
+    def make_noise(self):
+        print("Bark, says", self.name)
+
+
+def main():
+    obj1 = Cat("Vasy")
+    obj1.eat()
+    obj1.make_noise()
+
+    obj2 = Dog("Dobby")
+    obj2.eat()
+    obj2.make_noise()
+
+    obj3 = Dog("Bobby")
+    obj3.eat()
+    obj3.make_noise()
+
+    obj4 = Animal("Hound")
+    obj4.eat()
+    obj4.make_noise()
+
+if __name__ == "__main__":
+    main()
 
