@@ -23,7 +23,7 @@ class Circle:
         self.x_pos = random.randint(radius,sw-radius)
         self.y_pos = random.randint(radius, sh - radius)
         self.radius = radius
-        self.color = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
+        self.color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
     def draw_circle(self):
         arcade.draw_circle_filled(self.x_pos,self.y_pos,self.radius,self.color)
